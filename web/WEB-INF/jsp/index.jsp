@@ -26,7 +26,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>cekhoax</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -71,20 +71,29 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Name &amp; Title</h3>
+          <h3>cekhoax.com</h3>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="#overview" class="mdl-layout__tab is-active">Hot</a>
-          <!--<a href="#features" class="mdl-layout__tab">Laporanmu</a>
-          <a href="#features" class="mdl-layout__tab">Profil</a>
-          <a href="#features" class="mdl-layout__tab">Keluar</a>
-          -->
+            <%
+                    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+                        out.print("");
+                    }
+                    else{
+                        out.print("<a href='#features' class='mdl-layout__tab'>Laporanmu</a>");
+                        out.print("<a href='#features' class='mdl-layout__tab'>"+session.getAttribute("userid")+"</a>");
+                        out.print("<a href='logout.htm' class='mdl-layout__tab'>Keluar</a>");
+                    }
+            %>
+
+          <a href="login.htm">
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
           </button>
+          </a>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -98,7 +107,7 @@
                 SessionFactory sf = cf.buildSessionFactory();
                 session1 =sf.openSession();
 //Using from Clause
-                String SQL_QUERY ="from Post";
+                String SQL_QUERY ="from Post order by id_post desc";
                 Query query = session1.createQuery(SQL_QUERY);
                 Iterator it=query.iterate();
                 while(it.hasNext())
@@ -117,7 +126,7 @@
                             User e2=(User)it2.next();
                             unama = e2.getUsername();
                         }
-                        
+
             %>
             
             
@@ -202,6 +211,7 @@
             </div>
           </div>
           <div class="mdl-mega-footer--bottom-section">
+              <a href="index.jsp"></a>
             <div class="mdl-logo">
               More Information
             </div>

@@ -41,6 +41,7 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="cekhoax"/>
-  <table-filter match-name="user"/>
   <table-filter match-name="post"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="cekuser"/>
 </hibernate-reverse-engineering>

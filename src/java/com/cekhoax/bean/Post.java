@@ -1,5 +1,5 @@
 package com.cekhoax.bean;
-// Generated Dec 27, 2016 10:01:20 AM by Hibernate Tools 4.3.1
+// Generated Dec 27, 2016 5:15:33 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;

@@ -20,6 +20,13 @@
         <property name="mappings">
             <props>
                 <prop key="index.htm">indexController</prop>
+                <prop key="login.htm">loginController</prop>
+                <prop key="login_proses.htm">loginprosesController</prop>
+                <prop key="logout.htm">logoutController</prop>
+                <prop key="signup.htm">signupController</prop>
+                <prop key="signup_proses.htm">signupprosesController</prop>
+                <prop key="thank.htm">thankController</prop>
+                <prop key="duplicateuser.htm">duplicateuserController</prop>
             </props>
         </property>
     </bean>
@@ -35,5 +42,26 @@
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-
+    <bean name="loginController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="login" />
+    <bean name="loginprosesController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="login_proses" />
+    <bean name="logoutController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="logout" />
+    <bean name="signupController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="signup" />
+    <bean name="signupprosesController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="signup_proses" />
+    <bean name="thankController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="thank" />
+    <bean name="duplicateuserController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="duplicateuser" />
+                
 </beans>
