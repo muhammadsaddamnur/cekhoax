@@ -29,6 +29,8 @@
                 <prop key="duplicateuser.htm">duplicateuserController</prop>
                 <prop key="input.htm">inputController</prop>
                 <prop key="input_proses.htm">inputprosesController</prop>
+                <prop key="laporanku.htm">laporankuController</prop>
+                <prop key="update.htm">updateController</prop>
             </props>
         </property>
     </bean>
@@ -71,4 +73,10 @@
     <bean name="inputprosesController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="input_proses" />
+    <bean name="laporankuController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="laporanku" />
+    <bean name="updateController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="update" />
 </beans>

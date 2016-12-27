@@ -19,10 +19,9 @@
     <body>
 
 <body>
-    <div class="login-page">
          <div class="form">
-	<h1>Input Berita</h1>
         <form action="input_proses.htm" method="post">
+            <h1>Buat Laporan</h1>
             <br><input type="text" name="judul" placeholder="Judul Berita" required="required" />
             <div class="mdl-textfield mdl-js-textfield">
                 <textarea class="mdl-textfield__input" type="text" rows= "5" id="isi" name="isi" required="required"></textarea>
@@ -33,11 +32,12 @@
                 <textarea class="mdl-textfield__input" type="text" rows= "5" id="alasan" name="alasan" required="required"></textarea>
                 <label class="mdl-textfield__label" for="sample5">Alasan</label>
             </div>
-            <button type="submit" class="btn btn-primary btn-block btn-large">Post</button><br>
-            <a href="index.htm"><button type="reset" class="btn btn-primary btn-block btn-large">Cancel</button></a>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Laporkan</button><br>
+            <a href="index.htm">
+            <button class="btn btn-primary btn-block btn-large">Kembali</button>
+            </a>
         </form>
         </div>
-    </div>
     </body>
 </html>
 
