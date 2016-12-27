@@ -4,7 +4,10 @@
 <!DOCTYPE html>
 <link href="${pageContext.request.contextPath}/assets/styles.css" rel="stylesheet" type="text/css" />
 
-
+                <%
+                    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+                        
+                %>  
 
 <html>
     <head>
@@ -24,3 +27,9 @@
     </div>
     </body>
 </html>
+
+                <%  }
+                    else{
+                        response.sendRedirect("index.htm");
+                    }
+                %>

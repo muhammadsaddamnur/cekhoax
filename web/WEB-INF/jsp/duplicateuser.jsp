@@ -1,8 +1,13 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <link href="${pageContext.request.contextPath}/assets/styles.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
 
+
+                <%
+                    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+                        
+                %>  
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -21,3 +26,8 @@
     </div>
     </body>
 </html>
+
+                <%
+                    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+                        
+                %>  

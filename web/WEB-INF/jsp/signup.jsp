@@ -1,5 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+                <%
+                    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
+                        
+                %>  
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -25,3 +29,9 @@
     </div>
     </body>
 </html>
+
+                <%  }
+                    else{
+                        response.sendRedirect("index.htm");
+                    }
+                %>
