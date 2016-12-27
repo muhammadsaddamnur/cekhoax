@@ -77,9 +77,10 @@
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="#overview" class="mdl-layout__tab is-active">Hot</a>
-          <a href="#features" class="mdl-layout__tab">Laporanmu</a>
+          <!--<a href="#features" class="mdl-layout__tab">Laporanmu</a>
           <a href="#features" class="mdl-layout__tab">Profil</a>
           <a href="#features" class="mdl-layout__tab">Keluar</a>
+          -->
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -90,7 +91,7 @@
         <div class="mdl-layout__tab-panel is-active" id="overview">
           
             
-            <%! String judul;String epost; String alasan; String link; Session session1 = null; %>
+            <%! String judul;String epost; String alasan; String link; String unama; int idnama; Session session1 = null; %>
             <%
                 Configuration cf=new Configuration();
                 cf.configure();
@@ -107,6 +108,16 @@
                         epost=e.getPost();
                         alasan=e.getAlasan();
                         link = e.getLink();
+                        idnama = e.getIdNama();
+                        String SQL_QUERY2 ="from User where id_nama='" + idnama +  "'";
+                        Query query2 = session1.createQuery(SQL_QUERY2);
+                        Iterator it2=query2.iterate();
+                        while(it2.hasNext())
+                        {
+                            User e2=(User)it2.next();
+                            unama = e2.getUsername();
+                        }
+                        
             %>
             
             
@@ -119,8 +130,13 @@
                 <h4><%=judul%></h4>
                 <%=epost%> <br>
                 <br>
+                <b>Alasan :</b>
                 <%=alasan%> <br>
-                <%=link%>
+                <br>
+                <b>Sumber dari :</b>
+                <a href="<%=link%>"><%=link%></a> <br>
+                <b>Pelapor :</b>
+                <%=unama%> <br>
               </div>
               <div class="mdl-card__actions">
                 <a href="#" class="mdl-button">Read our features</a>
