@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 27, 2016 10:01:23 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.cekhoax.bean.Post" table="post" catalog="cekhoax" optimistic-lock="version">
+        <id name="idPost" type="java.lang.Integer">
+            <column name="id_post" />
+            <generator class="identity" />
+        </id>
+        <property name="idNama" type="int">
+            <column name="id_nama" not-null="true" />
+        </property>
+        <property name="judul" type="string">
+            <column name="judul" not-null="true" />
+        </property>
+        <property name="link" type="string">
+            <column name="link" not-null="true" />
+        </property>
+        <property name="post" type="string">
+            <column name="post" length="65535" not-null="true" />
+        </property>
+        <property name="alasan" type="string">
+            <column name="alasan" length="65535" not-null="true" />
+        </property>
+        <property name="tanggal" type="date">
+            <column name="tanggal" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
