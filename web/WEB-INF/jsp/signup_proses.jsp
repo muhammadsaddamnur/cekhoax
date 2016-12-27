@@ -19,7 +19,7 @@
         cf.configure();
         SessionFactory sessionFactory = cf.buildSessionFactory();
         session1 =sessionFactory.openSession();
-        Cekuser e1 = new Cekuser(email);
+        Cekuser e1 = new Cekuser(username);
         session1.save(e1);
         User e=new User(username,email,notlp,password);
         session1.save(e);
