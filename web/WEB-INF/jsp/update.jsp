@@ -1,5 +1,6 @@
 <%@ page import="java.util.*,org.hibernate.Session,org.hibernate.SessionFactory,org.hibernate.Transaction,org.hibernate.cfg.Configuration" %>
 <%@page import="com.cekhoax.bean.*"%>
+<html>
 <body>
 <%
 String idpost= request.getParameter("id_post");
@@ -60,10 +61,8 @@ System.out.println("e="+e.getMessage());
                 <textarea class="mdl-textfield__input" type="text" rows= "5" id="alasan" name="alasan" required="required"><%=alasan%></textarea>
                 <label class="mdl-textfield__label" for="sample5">Alasan</label>
             </div>
-                <input type="submit" name="s1" value="save"><br>
-            <a href="index.htm">
-            <button class="btn btn-primary btn-block btn-large">Kembali</button>
-            </a>
+                <input type="submit" name="s1" value="Update"><br>
+            <a href="laporanku.htm">Kembali</a>
         </form>
         </div>
     </body>
