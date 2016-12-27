@@ -83,8 +83,8 @@
                         out.print("");
                     }
                     else{
-                        out.print("<a href='laporanku.htm' class='mdl-layout__tab is-active'>Laporanku</a>");
-                        out.print("<a href='profil.htm' class='mdl-layout__tab'>"+session.getAttribute("userid")+"</a>");
+                        out.print("<a href='laporanku.htm' class='mdl-layout__tab'>Laporanku</a>");
+                        out.print("<a href='profil.htm' class='mdl-layout__tab  is-active'>"+session.getAttribute("userid")+"</a>");
                         out.print("<a href='logout.htm' class='mdl-layout__tab'>Keluar</a>");
                     }
             %>
@@ -101,71 +101,49 @@
         <div class="mdl-layout__tab-panel is-active" id="overview">
           
             
-            <%! String judul;String epost; String alasan; String link; String unama; int idnama; Date tanggal; int idpost; Session session1 = null; %>
+            <%! int id;String nama; String email; String notlp; Session session1 = null; %>
             <%
                 Configuration cf=new Configuration();
                 cf.configure();
                 SessionFactory sf = cf.buildSessionFactory();
                 session1 =sf.openSession();
 //Using from Clause
-                String SQL_QUERY2 ="from User where username ='"+session.getAttribute("userid")+"'";
-                Query query2 = session1.createQuery(SQL_QUERY2);
-                Iterator it2=query2.iterate();
-                while(it2.hasNext()){
-           
-                    User e2=(User)it2.next();
-                    idnama = e2.getIdNama();
-                }
-
-                String SQL_QUERY ="from Post where id_nama ='"+idnama+"'order by id_post desc";
+                String SQL_QUERY ="from User where id_nama ='"+session.getAttribute("idnama")+"'";
                 Query query = session1.createQuery(SQL_QUERY);
                 Iterator it=query.iterate();
-                
                 while(it.hasNext())
                 {
-                        Post e=(Post)it.next();
-                        judul=e.getJudul();
-                        epost=e.getPost();
-                        alasan=e.getAlasan();
-                        link = e.getLink();
-                        tanggal = e.getTanggal();
-                        idpost = e.getIdPost();
-
+                        User e=(User)it.next();
+                        id=e.getIdNama();
+                        nama=e.getUsername();
+                        email=e.getEmail();
+                        notlp = e.getNotlp();
 
             %>
             
             
             <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
-              <i class="material-icons">link</i>
+              <i class="material-icons">face</i>
             </header>
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
-                <h4><%=judul%></h4>
-                <%=epost%> <br>
-                <br>
-                <b>Alasan :</b>
-                <%=alasan%> <br>
-                <br>
-                <b>Sumber dari :</b>
-                <a href="<%=link%>"><%=link%></a> <br>
-                <b>Dilaporkan Pada :</b>
-                <%=tanggal%> <br>
-                <b>Pelapor :</b>
-                <%=session.getAttribute("userid")%> <br>
-              </div>
-              <div class="mdl-card__actions">
-                <a href="update.htm?id_post=<%=idpost%>&id_nama=<%=idpost%>&judul=<%=judul%>&epost=<%=epost%>&link=<%=link%>&alasan=<%=alasan%>" class="mdl-button">Edit</a>
-                <a href="delete.htm?id_post=<%=idpost%>" class="mdl-button">Hapus</a>
+                  <b>Id :
+                      <%=id%> </b> <br>
+                  <br>
+                  <b>Nama :
+                      <%=nama%> </b> <br>
+                  <br>
+                  <b>Email :
+                      <%=email%> </b> <br>
+                  <br>
+                  <b>No.Telp :
+                      <%=notlp%> </b> <br>
+                  <br>
               </div>
             </div>
 
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
-                    </section>
+          </section>
                   <br>
                   <br>
                   

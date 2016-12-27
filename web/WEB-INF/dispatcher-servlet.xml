@@ -31,6 +31,8 @@
                 <prop key="input_proses.htm">inputprosesController</prop>
                 <prop key="laporanku.htm">laporankuController</prop>
                 <prop key="update.htm">updateController</prop>
+                <prop key="delete.htm">deleteController</prop>
+                <prop key="profil.htm">profilController</prop>
             </props>
         </property>
     </bean>
@@ -79,4 +81,10 @@
     <bean name="updateController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="update" />
+    <bean name="deleteController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="delete" />
+    <bean name="profilController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="profil" />
 </beans>

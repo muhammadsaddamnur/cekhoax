@@ -77,14 +77,14 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="#overview" class="mdl-layout__tab is-active">Hot</a>
+          <a href="index.htm" class="mdl-layout__tab is-active">Hot</a>
             <%
                     if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
                         out.print("");
                     }
                     else{
                         out.print("<a href='laporanku.htm' class='mdl-layout__tab'>Laporanku</a>");
-                        out.print("<a href='#features' class='mdl-layout__tab'>"+session.getAttribute("userid")+"</a>");
+                        out.print("<a href='profil.htm' class='mdl-layout__tab'>"+session.getAttribute("userid")+"</a>");
                         out.print("<a href='logout.htm' class='mdl-layout__tab'>Keluar</a>");
                     }
             %>
@@ -145,24 +145,21 @@
                 <%=alasan%> <br>
                 <br>
                 <b>Sumber dari :</b>
-                <a href="<%=link%>"><%=link%></a> <br>
+                <a href="http://<%=link%>/"><%=link%></a> <br>
                 <b>Dilaporkan Pada :</b>
                 <%=tanggal%> <br>
                 <b>Pelapor :</b>
                 <%=unama%> <br>
               </div>
               <div class="mdl-card__actions">
-                <a href="#" class="mdl-button">Read our features</a>
+                <a href="http://<%=link%>/" class="mdl-button">Baca Sumbernya</a>
               </div>
             </div>
 
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
-          </section>
-              
+                    </section>
+                  <br>
+                  <br>
+                  
               <%
                 }
                 session1.close();
@@ -171,71 +168,18 @@
           
           
         </div>
-        
-              
-              
-              
-        <div class="mdl-layout__tab-panel" id="features">
-          <section class="section--center mdl-grid mdl-grid--no-spacing">
-            <div class="mdl-cell mdl-cell--12-col">
-
-            </div>
-          </section>
-        </div>
-              
-              
-              
+               
         <footer class="mdl-mega-footer">
-          <div class="mdl-mega-footer--middle-section">
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Features</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">About</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Updates</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Details</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Spec</a></li>
-                <li><a href="#">Tools</a></li>
-                <li><a href="#">Resources</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">Technology</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">How it works</a></li>
-                <li><a href="#">Patterns</a></li>
-                <li><a href="#">Usage</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contracts</a></li>
-              </ul>
-            </div>
-            <div class="mdl-mega-footer--drop-down-section">
-              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
-              <h1 class="mdl-mega-footer--heading">FAQ</h1>
-              <ul class="mdl-mega-footer--link-list">
-                <li><a href="#">Questions</a></li>
-                <li><a href="#">Answers</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-            </div>
-          </div>
           <div class="mdl-mega-footer--bottom-section">
               <a href="index.jsp"></a>
             <div class="mdl-logo">
-              More Information
+              copyright 
             </div>
             <ul class="mdl-mega-footer--link-list">
-              <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy and Terms</a></li>
+              <li><a href="https://github.com/muhammadsaddamnur/">saddam</a></li>
+              <li><a href="https://github.com/siscofran999/">fransisco</a></li>
+              <li><a href="https://github.com/relic8's/">indra</a></li>
+              <li><a href="https://github.com/nurrizky's/">nurizky</a></li>
             </ul>
           </div>
         </footer>
