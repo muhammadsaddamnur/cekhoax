@@ -19,8 +19,8 @@
             <div class="form">
 
                 <form action="login_proses.htm" method="post" class="login-form">
-                    <input type="text" placeholder="username" name="username"/>
-                    <input type="password" placeholder="password" name="password"/>
+                    <input type="text" placeholder="Username" name="username"/>
+                    <input type="password" placeholder="Password" name="password"/>
                     <button name="submit">login</button>
                     <p class="message">Belum Mendaftar? <a href="signup.htm">Buat Sekarang</a></p>
                 </form>

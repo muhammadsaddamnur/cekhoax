@@ -18,10 +18,10 @@
             <div class="form">
 
                 <form action="signup_proses.htm" method="post" class="login-form">
-                    <input type="text" placeholder="username" name="username" required/>
-                    <input type="email" placeholder="email" name="email" required/>
-                    <input type="phone" placeholder="notlp" name="notlp" required/>
-                    <input type="password" placeholder="password" name="password" required/>
+                    <input type="text" placeholder="Username" name="username" required/>
+                    <input type="email" placeholder="Email" name="email" required/>
+                    <input type="phone" placeholder="Nomor Telepon" name="notlp" required/>
+                    <input type="password" placeholder="Password" name="password" required/>
                     <button name="submit">Daftar</button>
                     <p class="message">Sudah Punya Akun? <a href="login.htm">Login Sekarang</a></p>
                 </form>

@@ -99,7 +99,13 @@
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
-          
+            <center><form action="cari.htm" method="get">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="cari" name="cari">
+            <label class="mdl-textfield__label" for="cari">Cari Laporan</label>
+            </div>
+            </form>
+            </center>
             
             <%! String judul;String epost; String alasan; String link; String unama; int idnama; Date tanggal; Session session1 = null; %>
             <%
@@ -136,6 +142,7 @@
             <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
               <i class="material-icons">link</i>
             </header>
+
             <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
               <div class="mdl-card__supporting-text">
                 <h4><%=judul%></h4>
@@ -145,14 +152,14 @@
                 <%=alasan%> <br>
                 <br>
                 <b>Sumber dari :</b>
-                <a href="http://<%=link%>/"><%=link%></a> <br>
+                <a href="<%=link%>"><%=link%></a> <br>
                 <b>Dilaporkan Pada :</b>
                 <%=tanggal%> <br>
                 <b>Pelapor :</b>
                 <%=unama%> <br>
               </div>
               <div class="mdl-card__actions">
-                <a href="http://<%=link%>/" class="mdl-button">Baca Sumbernya</a>
+                <a href="<%=link%>" class="mdl-button">Baca Sumbernya</a>
               </div>
             </div>
 

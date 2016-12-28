@@ -33,6 +33,7 @@
                 <prop key="update.htm">updateController</prop>
                 <prop key="delete.htm">deleteController</prop>
                 <prop key="profil.htm">profilController</prop>
+                <prop key="cari.htm">cariController</prop>
             </props>
         </property>
     </bean>
@@ -87,4 +88,7 @@
     <bean name="profilController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="profil" />
+    <bean name="cariController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="cari" />
 </beans>

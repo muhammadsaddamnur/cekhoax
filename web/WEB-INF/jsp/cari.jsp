@@ -77,13 +77,13 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-          <a href="index.htm" class="mdl-layout__tab">Hot</a>
+          <a href="index.htm" class="mdl-layout__tab is-active">Hot</a>
             <%
                     if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
                         out.print("");
                     }
                     else{
-                        out.print("<a href='laporanku.htm' class='mdl-layout__tab is-active'>Laporanku</a>");
+                        out.print("<a href='laporanku.htm' class='mdl-layout__tab'>Laporanku</a>");
                         out.print("<a href='profil.htm' class='mdl-layout__tab'>"+session.getAttribute("userid")+"</a>");
                         out.print("<a href='logout.htm' class='mdl-layout__tab'>Keluar</a>");
                     }
@@ -99,28 +99,25 @@
       </header>
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
-          
             
-            <%! String judul;String epost; String alasan; String link; String unama; int idnama; Date tanggal; int idpost; Session session1 = null; %>
+            <center><form action="cari.htm" method="get">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="cari" name="cari">
+            <label class="mdl-textfield__label" for="cari">Cari Laporan</label>
+            </div>
+            </form>
+            </center>
+            
+            <%! String judul;String epost; String alasan; String link; String unama; int idnama; Date tanggal; Session session1 = null; %>
             <%
+                String cari= request.getParameter("cari");
                 Configuration cf=new Configuration();
                 cf.configure();
                 SessionFactory sf = cf.buildSessionFactory();
                 session1 =sf.openSession();
-//Using from Clause
-                String SQL_QUERY2 ="from User where username ='"+session.getAttribute("userid")+"'";
-                Query query2 = session1.createQuery(SQL_QUERY2);
-                Iterator it2=query2.iterate();
-                while(it2.hasNext()){
-           
-                    User e2=(User)it2.next();
-                    idnama = e2.getIdNama();
-                }
-
-                String SQL_QUERY ="from Post where id_nama ='"+idnama+"'order by id_post desc";
+                String SQL_QUERY ="from Post WHERE judul LIKE '%"+cari+"%' OR post LIKE '%"+cari+"%' OR alasan LIKE '%"+cari+"%' OR link LIKE '%"+cari+"%' OR tanggal LIKE '%"+cari+"%' order by id_post desc";
                 Query query = session1.createQuery(SQL_QUERY);
                 Iterator it=query.iterate();
-                
                 while(it.hasNext())
                 {
                         Post e=(Post)it.next();
@@ -128,9 +125,16 @@
                         epost=e.getPost();
                         alasan=e.getAlasan();
                         link = e.getLink();
+                        idnama = e.getIdNama();
                         tanggal = e.getTanggal();
-                        idpost = e.getIdPost();
-
+                        String SQL_QUERY2 ="from User where id_nama='" + idnama +  "'";
+                        Query query2 = session1.createQuery(SQL_QUERY2);
+                        Iterator it2=query2.iterate();
+                        while(it2.hasNext())
+                        {
+                            User e2=(User)it2.next();
+                            unama = e2.getUsername();
+                        }
 
             %>
             
@@ -148,23 +152,17 @@
                 <%=alasan%> <br>
                 <br>
                 <b>Sumber dari :</b>
-                <a href="<%=link%>"><%=link%>/</a> <br>
+                <a href="<%=link%>"><%=link%></a> <br>
                 <b>Dilaporkan Pada :</b>
                 <%=tanggal%> <br>
                 <b>Pelapor :</b>
-                <%=session.getAttribute("userid")%> <br>
+                <%=unama%> <br>
               </div>
               <div class="mdl-card__actions">
-                <a href="update.htm?id_post=<%=idpost%>&id_nama=<%=idpost%>&judul=<%=judul%>&epost=<%=epost%>&link=<%=link%>&alasan=<%=alasan%>" class="mdl-button">Edit</a>
-                <a href="delete.htm?id_post=<%=idpost%>" class="mdl-button">Hapus</a>
+                <a href="<%=link%>" class="mdl-button">Baca Sumbernya</a>
               </div>
             </div>
 
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-              <li class="mdl-menu__item">Lorem</li>
-              <li class="mdl-menu__item" disabled>Ipsum</li>
-              <li class="mdl-menu__item">Dolor</li>
-            </ul>
                     </section>
                   <br>
                   <br>
